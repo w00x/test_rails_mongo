@@ -1,0 +1,27 @@
+<h1>Listing hola_mundos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Endad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hola_mundos.each do |hola_mundo| %>
+      <tr>
+        <td><%= hola_mundo.nombre %></td>
+        <td><%= hola_mundo.endad %></td>
+        <td><%= link_to 'Show', hola_mundo %></td>
+        <td><%= link_to 'Edit', edit_hola_mundo_path(hola_mundo) %></td>
+        <td><%= link_to 'Destroy', hola_mundo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hola mundo', new_hola_mundo_path %>
